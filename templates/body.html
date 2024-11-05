@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra %}
+<link rel="stylesheet" href="{% static "body.css" %}">
+<link rel="stylesheet" href="{% static "slider.css" %}">
+<link rel="stylesheet" href="{% static 'garants.css' %}">
+<link rel="stylesheet" href="{% static "blog.css" %}">
+{% endblock extra %}
+
+
+{% block body %}
+    <div class="body">
+        <div class="container">
+            <div class="bodybod">
+                <div class="body-info">
+                    <div class="info-name">
+                        <h1>ADIDAS <br> NITE JOGGER</h1>
+                    </div>
+                    <div class="info-p">
+                        <p>Городские кроссовки в<br>ярком стиле 80-х</p>
+                    </div>
+                    <div class="info-button">
+                        <button>Смотреть все</button>
+                    </div>
+                </div>
+                <div class="body-adver">
+                    <div class="body-adver-poth">
+                    </div>
+                    <img  src="..\static\img\body-img\adidas-Nite-Jogger-Solar-Orange-G26313-Release-Date-2 2.png" alt="">
+                    <img class="img2" src="..\static\img\body-img\Polygon 5.svg" alt="">
+    
+                </div>
+            </div>
+
+            <div class="advers-niks">
+                <div class="niks1">
+                    <div class="niks1-poth">
+                        <p>Adidas <br> Yeezy Boost </p>
+                    </div>
+                    <img class="niks1-sneak" src="..\static\img\body-img\174123356_w640_h640_uniseks-adidas-yeezy 1.png" alt="">
+                    <button><img class='wel' src="..\static\img\body-img\Shape.svg" alt=""></button>
+                </div>
+                <div class="niks2">
+                    <div class="niks2-poth">
+                        <p>Nike <br>Air Max  </p>
+                    </div>
+                    <img class="niks2-sneak" src="..\static\img\body-img\ct9633-100 3.png" alt="">
+                    <button><img  class='wel' src="..\static\img\body-img\Shape.svg" alt=""></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+{% endblock%}
+
+
+{% block slider %}
+<div class="container">
+    <div class="slider-body">
+        <h1 class="slider-text">Лучшие из лучших</h1>
+        <div class="slide-flex">
+            {% for slide in sneakers %}
+                <div class="card-slide">
+                    <img src="{{slide.photo.url}}" class="img-slide" alt="...">
+                    <div class="container-slider">
+                        <h2>{{slide.name}}</h2>
+                        <p><span>Артикул</span> {{slide.code}}</p>
+                        <div class="price-slide">
+                            <a href="{% url "detail_news" id=slide.id %}"><h1>{{slide.price}} Р</h1></a>
+                            <img src="..\static\img\slid.img\Shape (1).svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+{% block garants %}
+<div class="container">
+    <div class="garants">
+        <div class="group"> 
+            <img src="..\static\img\garants-img\Group.png" alt="">
+            <h1>Поможем <br> подобрать <br> размер</h1>
+        </div>
+        <div class="like">
+            <img src="..\static\img\garants-img\like 1.png" alt="">
+            <h1>Гарантируем <br> качество <br> товара</h1>
+        </div>
+        <div class="box">
+            <img src="..\static\img\garants-img\box 1.png" alt="">
+            <h1>Быстро <br> доставим <br> покупку</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block blog %}
+<div class="container">
+    <h1 class="h1blog">Блог</h1>
+    <div class="blog">
+        <div class="blog-content">
+            <div class="blog-270">
+                <div class="blog-flex">
+                    <img src="..\static\img\blog-img\Mask Group.png" alt="">
+                    <div class="blog-rite">
+                        <h1>КРОССОВКИ NIKE AIR MAX 270</h1>
+                        <h3>Nike Air Max 720 Saturn представлен в совершенно новой цветовой гамме Black / Team Orange.</h3>
+                        <p>15 августа 2019</p> 
+                    </div>
+                </div>
+            </div>
+            <div class="blog-720">
+                <div class="blog-flex">
+                    <img src="..\static\img\blog-img\Mask Group.png" alt="">
+                    <div class="blog-rite">
+                        <h1>Кроссовки Nike Air Max 720 Saturn</h1>
+                        <h3>Nike Air Max 720 Saturn представлен в совершенно новой цветовой гамме Black / Team Orange.</h3>
+                        <p>15 августа 2019</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="post-email">
+            <div class="post-back">
+                <h1>Подпишись на рассылку <br> и получи скидку  до 10 %  </h1>
+                <div class="post-back2">
+                    <input type="text" placeholder="Введите Ваш email">
+                    <button>Подписаться</button>
+                    <a href="#">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <h1 class="h1brends">Бренды</h1>
+    <div class="brends">
+        <img src="..\static\img\blog-img\Mask Group (4).png" alt="">
+        <img src="..\static\img\blog-img\Mask Group (1).png" alt="">
+        <img src="..\static\img\blog-img\Mask Group (2).png" alt="">
+        <img src="..\static\img\blog-img\Mask Group (3).png" alt="">
+        <img src="..\static\img\blog-img\Mask Group (4).png" alt="">
+        <img src="..\static\img\blog-img\Mask Group (5).png" alt="">
+
+    </div>
+
+
+    
+</div>
+
+{% endblock %}
+
+
+
+
+

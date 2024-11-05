@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'creat.css' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="flex align-center justify-center font-bold mt-7">
+      Update Sneakers
+    </h1>
+    <div class="container flex align-center justify-center">
+      <form
+        action="{% url 'update' id=sneakers.id %}"
+        method="POST"
+        enctype="multipart/form-data"
+        novalidate
+      >
+        {% csrf_token %}
+
+        <div class='flex align-center justify-center gap-5'>
+          <label for="id_name">{{form.name.label}}</label>
+          {{form.name}}
+          <div class="text-danger">
+            {% for error in form.name.errors %}
+            <div class="text-red-500">{{ error }}</div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div>
+          <label for="id_photo">{{form.photo.label}}</label>
+          {{form.photo}}
+          <div class="text-danger">
+            {% for error in form.photo.errors %}
+            <div class="text-red-500">{{ error }}</div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class='flex align-center justify-center gap-5'>
+          <label for="id_code">{{form.code.label}}</label>
+          {{form.code}}
+          <div class="text-danger">
+            {% for error in form.code.errors %}
+            <div class="text-red-500">{{ error }}</div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div  class='flex align-center justify-center gap-5'>
+          <label for="id_price">{{form.price.label}}</label>
+          {{form.price}}
+          <div class="text-danger">
+            {% for error in form.price.errors %}
+            <div class="text-red-500">{{ error }}</div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div  class='flex gap-5 ml-40'>
+          <label for="id_size">{{form.size.label}}</label>
+          {{form.size}}
+          <div class="text-danger">
+            {% for error in form.size.errors %}
+            <div class="text-red-500">{{ error }}</div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class='flex gap-5 ml-40'>
+          <label for="id_category">{{form.category.label}}</label>
+          {{form.category}}
+          <div class="text-danger">
+            {% for error in form.category.errors %}
+            <div class="text-red-500">{{ error }}</div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class='flex gap-5 ml-40'>
+          <label for="id_sezon">{{form.seazon.label}}</label>
+          {{form.seazon}}
+          <div class="text-danger">
+            {% for error in form.seazon.errors %}
+            <div class="text-red-500">{{ error }}</div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class='flex gap-5 ml-40'>
+          <label for="id_color">{{form.color.label}}</label>
+          {{form.color}}
+          <div class="text-danger">
+            {% for error in form.color.errors %}
+            <div class="text-red-500">{{ error }}</div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class='flex gap-5 ml-40'>
+          <label for="id_category_sneakers"
+            >{{form.category_sneakers.label}}</label
+          >
+          {{form.category_sneakers}}
+          <div class="text-danger">
+            {% for error in form.category_sneakers.errors %}
+            <div class="text-red-500">{{ error }}</div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class='flex gap-5 ml-40'>
+          <label for="id_brends">{{form.brends.label}}</label>
+          {{form.brends}}
+          <div class="text-danger">
+            {% for error in form.brends.errors %}
+            <div class="text-red-500">{{ error }}</div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div>
+          <button type="submit" class="w-72 h-12 bg-green-500 mt-5 border-none cursor-pointer text-white text-2xl ml-60">Update</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

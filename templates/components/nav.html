@@ -1,0 +1,99 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'nav.css' %}" />
+
+
+<div class="header">
+
+  <div class="sale">
+    <h1>Только три дня скидка <span> -30% </span> на всё!</h1>
+  </div>
+
+  <div class="container">
+    <div class="header-cap">
+      <div class="contacts">
+        <div class="phone">
+          <img src="{% static "..\static\img\nav-img\Group (1).svg" %}" alt="" />
+          <p>+7 951 999 28 34</p>
+        </div>
+        <div class="email">
+          <img src="{% static "..\static\img\nav-img\email 1.svg" %}" alt="" />
+          <p>info@stageboxbrand.ru</p>
+        </div>
+      </div>
+      <div class="logotip">
+        <a href="{% url "main" %}"><img src="{% static "..\static\img\nav-img\Логотип.png" %}" alt="" /></a>
+      </div>
+      <div id='nav-cap' class="nav-cap">
+
+        <div class="korzina">
+          <img
+            src="{% static "..\static\img\nav-img\Ellipse 29 (2).svg" %}"
+            class="korzina-poth"
+            alt=""
+          />
+          <img
+            src="{% static "..\static\img\nav-img\Group (2).svg" %}"
+            class="korzina-real"
+            alt=""
+          />
+        </div>
+        <div class="profil1">
+          <img src="{% static "..\static\img\nav-img\Личный кабинет (1).svg" %}" alt="" />
+        </div>
+        <div class="favourites1">
+          <img src="{% static "..\static\img\nav-img\Избранное (3).svg" %}" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="header-nav">
+      <div id='nav' class="red-nav-media">
+        <h1>MENU</h1>
+        <div id="nav-filter" class="nav-filter">
+          {% for category in category_list %}
+            <a href="{% url 'categor_elements' id=category.id %}">{{category.name}}</a>
+          {% endfor %}
+        </div>
+      </div>
+        <div class="header-navigation">
+            {% for category in category_list %}
+                <a href="{% url 'categor_elements' id=category.id %}">{{category.name}}</a>
+                
+            {% endfor %}
+            <a href="{% url 'workspace' %}">Workspace</a>
+        </div>
+        <div class="header-search">
+            <form id='form-search' class='search' method="GET">
+                <input class="search-input" type="search" name="search" value="{{request.GET.search}}" placeholder="Поиск" aria-label="Search">
+                <button class="search-button" type="submit"><img src="{% static "..\static\img\nav-img\magnifying-glass 1.svg" %}" alt=""></button>
+            </form>
+        </div>
+        <div id='search' class="red-search-media">
+          <h1>ПОИСК</h1>
+        </div>
+    </div>
+  </div>
+</div>
+
+{% block scripts %}
+<script>
+  document.getElementById('nav').addEventListener('click', function() {
+    const list = document.getElementById('nav-filter');
+    if(list.style.display == 'block'){
+      list.style.display = 'none'
+    }else{
+      list.style.display = 'block'
+    }
+  });
+
+  document.getElementById('search').addEventListener('click', function() {
+    const form = document.getElementById('form-search');
+    const serach = document.getElementById('search');
+    const cap = document.getElementById('nav-cap')
+    const nav = document.getElementById('nav')
+    form.style.display = 'block'
+    search.style.display = 'none'
+    cap.style.display = 'none'
+    nav.style.display = 'none'
+  });
+</script>
+{% endblock  %}

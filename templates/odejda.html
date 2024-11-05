@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block odejda %}
+<div class="container">
+    <button id='fil-button' class='fil-button'>Фильтрация</button>
+
+    <div class="filter">
+        {% include "components/filter.html" %}
+        <div class="position">
+            {% for slide in sneakers %}
+                {% if slide.category.id == 2%}
+                <a  href="{% url 'detail_news' id=slide.id %}">
+                <div class="card-slide">
+                    <img src="{{slide.photo.url}}" class="img-slide" alt="...">
+                    <div class="container-slider">
+                        <h2>{{slide.name}}</h2>
+                        <p><span>Артикул</span> {{slide.code}}</p>
+                        <div class="price-slide">
+                            <h1 class='price'>{{slide.price}} Р</h1>
+                            <img src="..\static\img\slid.img\Shape (1).svg" alt="">
+                        </div>
+                    </div>
+                </div> 
+                </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% comment %} <nav class="list-page">
+        {% for page in page_obj.paginator.page_range %}
+            {% if page == page_obj.number %}
+                <a class="pag" href="?page{{page}}{% if size %}&size={{ size }}{% endif %}{% if sezon %}&sezon={{ sezon }}{% endif %}{% if color %}&color={{ color }}{% endif %}{% if categorySne %}&categoryShe={{ categorySne }}{% endif %}{% if brend %}&brend={{ brend }}{% endif %}">{{page}}</a>
+            {% elif page >= page_obj.number|add:-2 and page <= page_obj.number|add:2 %}
+                <a class="paghov" href="?page{{page}}{% if size %}&size={{ size }}{% endif %}{% if sezon %}&sezon={{ sezon }}{% endif %}{% if color %}&color={{ color }}{% endif %}{% if categorySne %}&categoryShe={{ categorySne }}{% endif %}{% if brend %}&brend={{ brend }}{% endif %}">{{page}}</a>
+            {% endif %}
+        {% endfor %}
+
+    </nav> {% endcomment %}
+</div>
+{% endblock  %}

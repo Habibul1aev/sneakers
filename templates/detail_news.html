@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra %}
+<link rel="stylesheet" href="{% static 'detail.css' %}">
+{% endblock  %}
+
+{% block detail %}
+<div class="container">
+    <div class="zagalovok">
+        <h1>{{sneakers.name}}</h1>
+        <p>Артикул {{sneakers.code}}</p>
+        <div class="imgs-photo">
+            <div class="imgs">
+                <img class="imgs-parent" src="{{sneakers.photo.url}}" alt="">
+                <div class="imgs-child">
+                    {% for foto in img %}
+                    <img src="{{foto.image.url}}" alt="">
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="text-info">
+                <div class="text-info-in">
+                    <h1 class="price">{{sneakers.price}} Р</h1>
+                    <h1 class="razmer">Выберите размер</h1>
+                    
+                    <div class="sizes-container">
+                        {% for i in sneakers.size.all %}
+                            <p class="razmer-i">{{ i }} <span>EUR</span></p>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="opredelit-razmer">как определить размер?</button>
+
+                <button class="karzina">В корзину</button>
+                <button class="buy-now">Купить сейчас</button>
+            </div>
+        </div>
+    </div>
+    <div class="info-p">
+        <p>Описание</p>
+        <p>Оплата и доставка</p>
+        <p>Обмен и возврат</p>
+        <p>Гарантии</p>
+        <p>О товаре</p>
+    </div>
+    <div class="texts">
+        <p class="text-p">Кроссовки Nike Air Presto – обувь, которая создана с учетом максимальной вентиляции стопы и комфорта при ношении и занятиях спортом. Верхняя часть кроссовок изготовлена из материала, который обеспечивает идеальный микроклимат внутри обуви и комфорт при ношении. Подошва эластичная и в пяточной части имеет вставки «Air Sole» для лучшей амортизации. Глубокий рельеф протектора обеспечивает мягкость хода и удобство при ношении. Для фиксации стопы предусмотрена шнуровка через специальный каркас, который при затягивании образует жесткую и эластичную конструкцию.
+            - Комфортный микроклимат
+            - Легкий вес
+            - Амортизация стопы</p>
+
+        <div class='text-discript'>
+            <div class="text-flex">
+                <p>Категория</p>  
+                <p>Модель</p> 
+                <p>Сезон</p>  
+                <p>Цвет</p>  
+            </div>
+            <div class="text-h1-flex">
+                <h1>{{sneakers.category_sneakers}}</h1>
+                <h1>{{sneakers.name}}</h1>
+                <h1>{{sneakers.seazon}}</h1>
+                <h1>{{sneakers.color}}</h1>
+            </div>
+        </div>
+    </div>
+
+    {% comment %} <div class="container"> {% endcomment %}
+        <div class="slider-body">
+            <h1 class="slider-text">Лучшие из лучших</h1>
+            <div class="slide-flex">
+                {% for slide in sneakerss %}
+                    <div class="card-slide">
+                        <img src="{{slide.photo.url}}" class="img-slide" alt="...">
+                        <div class="container-slider">
+                            <h2>{{slide.name}}</h2>
+                            <p><span>Артикул</span> {{slide.code}}</p>
+                            <div class="price-slide">
+                                <a href="{% url 'detail_news' id=slide.id %}">{{slide.price}} Р</a>
+                                <img src="..\static\img\slid.img\Shape (1).svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% comment %} </div> {% endcomment %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock  %}

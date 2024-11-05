@@ -1,0 +1,356 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logotip{
+  img{
+    transition: 700ms;
+  }
+  img:hover{
+    transform:scale(1.1, 1.1) ;
+  }
+}
+
+.header {
+  width: 100%;
+}
+
+.sale {
+  background: #29292d;
+  width: 100%;
+  height: 40px;
+
+  h1 {
+    text-align: center;
+    color: white;
+
+    span {
+      color: red;
+    }
+  }
+}
+
+.header-cap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 23px 0;
+
+  .contacts {
+    text-align: start;
+    .phone {
+      display: flex;
+      align-items: start;
+      margin: 0 45px 10px 0;
+      p {
+        margin: 0 0 0 2px;
+      }
+    }
+    .email {
+      display: flex;
+      align-items: start;
+      p {
+        margin: 0 0 0 7px;
+      }
+    }
+  }
+
+  .nav-cap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    .korzina {
+      cursor: pointer;
+      margin: -20px;
+      .korzina-poth {
+        position: absolute;
+      }
+      .korzina-real {
+        position: relative;
+        padding: 25px 32px;
+      }
+    }
+  }
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .header-navigation {
+    display: flex;
+    gap: 25px;
+    font-size: 24px;
+    font-weight: 700;
+    a {
+      color: black;
+    }
+    a:hover {
+      color: red;
+    }
+  }
+
+  .header-search {
+    .search {
+      display: flex;
+      .search-input {
+        border-radius: 50px 0 0 50px;
+        width: 255px;
+        height: 44px;
+        border: 1px solid #29292d;
+        padding: 0 0 0 20px;
+        font-size: 18px;
+        outline: none;
+      }
+      .search-button {
+        background: #29292d;
+        width: 95px;
+        height: 44px;
+        border-radius: 0 50px 50px 0;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.red-nav-media{
+  display: none;
+}
+.red-search-media{
+  display: none;
+}
+.nav-filter{
+  display: none;
+}
+
+@media(max-width:360px){
+  .container {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .red-nav-media{
+    display: block;
+    background: red;
+    width: 85px;
+    height: 35px;
+    border-radius: 0 20px 20px 0;
+    margin: 5px -19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1{
+      color: white;
+      font-size: 14px;
+    }
+  }
+
+  .red-search-media{
+    display: block;
+    background: red;
+    width: 85px;
+    height: 35px;
+    border-radius: 20px 0px 0px 20px;
+    margin: 5px -21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1{
+      color: white;
+      font-size: 14px;
+    }
+  }
+  .header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    .header-navigation {
+      display: flex;
+      gap: 25px;
+      font-size: 24px;
+      font-weight: 700;
+      display: none;
+      a {
+        color: black;
+      }
+      a:hover {
+        color: red;
+      }
+    }
+  
+    .header-search {
+      .search {
+        display: flex;
+        display: none;
+        .search-input {
+          border-radius: 50px 0 0 50px;
+          width: 250px;
+          height: 44px;
+          border: 1px solid #29292d;
+          padding: 0 0 0 20px;
+          font-size: 18px;
+          outline: none;
+        }
+        .search-button {
+          background: #29292d;
+          width: 70px;
+          height: 44px;
+          border-radius: 0 50px 50px 0;
+          border: none;
+          position: absolute;
+        }
+      }
+    }
+  }
+  
+  .profil1>img{
+    width: 35px;
+    height: 35px;
+  }
+
+  .favourites1{
+    margin: 0px 3px -8px 0;
+  }
+
+  .header-cap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 23px 0;
+  
+    .contacts {
+      text-align: start;
+      .phone {
+        display: block;
+        align-items: start;
+        /* margin: 0 45px 10px 0; */
+        p {
+          font-size: 9px;
+          position: absolute;
+          margin: -16px 56px;
+        }
+        img{
+          display: none;
+        }
+      }
+      .email {
+        display: block;
+        align-items: start;
+        p {
+          font-size: 9px;
+          position: absolute;
+          margin: -26px 160px;
+        }
+        img{
+          display: none;
+        }
+      }
+    }
+  
+    .nav-cap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: absolute;
+      margin: 0px 0px -100px 95px;
+  
+      .korzina {
+        cursor: pointer;
+        margin: -20px;
+        .korzina-poth {
+          position: absolute;
+          height: 70px;
+        }
+        .korzina-real {
+          position: relative;
+          padding: 20px 25px;
+        }
+      }
+    }
+  }
+
+  .header-search {
+    .search {
+      display: flex;
+      .search-input {
+        border-radius: 50px 0 0 50px;
+        width: 1px;
+        height: 44px;
+        border: 1px solid #29292d;
+        padding: 0 0 0 20px;
+        font-size: 18px;
+        outline: none;
+      }
+      .search-button {
+        background: #29292d;
+        width: 95px;
+        height: 44px;
+        border-radius: 0 50px 50px 0;
+        border: none;
+        margin: 0px 0px 0px -5px
+      }
+    }
+  }
+
+
+  .sale {
+    background: #29292d;
+    width: 100%;
+    height: 20px;
+  
+    h1 {
+      text-align: center;
+      color: white;
+      font-size: 14px;
+  
+      span {
+        color: red;
+        font-size: 14px;
+
+      }
+    }
+  }
+
+  .logotip{
+    img{
+      transition: 700ms;
+      width: 41px;
+      height: 41px;
+      position: absolute;
+      margin: -43px -322px;
+    }
+    img:hover{
+      transform:scale(1.1, 1.1) ;
+    }
+  }
+
+  .nav-filter{
+    margin: 0px 0px -140px 21px;
+    position: absolute;
+    border-radius: 0 10px 10px 10px;
+    box-shadow: 7px 7px 5px rgba(51, 136, 255, 0.859);
+  }
+}
+

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra %}
+<link rel="stylesheet" href="{% static 'filter.css' %}">
+{% endblock extra %}
+
+{% block filter %}
+<div class="container">
+    <button id='fil-button' class='fil-button'>Фильтрация</button>
+    <div class="filter">
+        {% include "components/filter.html" %}
+        <div id='position' class="position">
+            {% for slide in page_obj %}
+                {% if slide.category.id == 1 %}
+                <a href="{% url 'detail_news' id=slide.id %}">
+                <div class="card-slide">
+                    <img src="{{slide.photo.url}}" class="img-slide" alt="...">
+                    <div class="container-slider">
+                        <h2>{{slide.name}}</h2>
+                        <p><span>Артикул</span> {{slide.code}}</p>
+                        <div class="price-slide">
+                            <h1 class='price'>{{slide.price}} Р</h1>
+                            <img src="..\static\img\slid.img\Shape (1).svg" alt="">
+                        </div>
+                    </div>
+                </div> 
+                </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <nav class="list-page">
+        {% for page in page_obj.paginator.page_range %}
+            {% if page_obj.number == page %}
+                <a class="pag" href="?page={{page}}{% if size %}&size={{ size }}{% endif %}{% if sezon %}&sezon={{ sezon }}{% endif %}{% if color %}&color={{ color }}{% endif %}{% if categorySne %}&categoryShe={{ categorySne }}{% endif %}{% if brend %}&brend={{ brend }}{% endif %}">{{page}}</a>
+            {% elif page >= page_obj.number|add:-2 and page <= page_obj.number|add:2 %}
+                <a class="paghov" href="?page={{page}}{% if size %}&size={{ size }}{% endif %}{% if sezon %}&sezon={{ sezon }}{% endif %}{% if color %}&color={{ color }}{% endif %}{% if categorySne %}&categoryShe={{ categorySne }}{% endif %}{% if brend %}&brend={{ brend }}{% endif %}">{{page}}</a>
+            {% endif %}
+        {% endfor %}
+    </nav>
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    document.getElementById('fil-button').addEventListener('click', function() {
+        const list = document.getElementById('filteration');
+        const filter = document.getElementById('position');
+        list.style.display = 'block';
+        filter.style.display = 'none'
+        
+      });
+</script>
+{% endblock  %}
+

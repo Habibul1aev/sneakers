@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneakers</title>
+    {% block extra %}
+    {% endblock extra %}
+</head>
+<body>
+    {% include "components/nav.html" %}
+    {% block body %} {% endblock %}
+    {% block slider %} {% endblock %}    
+    {% block garants %}{% endblock %}
+    {% block blog %}{% endblock  %}
+    {% comment %} {% block sik %}{% endblock  %} {% endcomment %}
+
+
+    {% block filter %}{% endblock  %}
+    {% block odejda %}{% endblock  %}
+    {% block acses %}{% endblock acses %}
+    {% block detail %}{% endblock  %}
+    {% include "components/footer.html" %}
+
+</body>
+    {% block scripts %}{% endblock  %}
+</html>

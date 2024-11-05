@@ -1,0 +1,60 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'footer.css' %}" />
+
+<div class="footer">
+  <div class="container">
+    <div class="footer-elems">
+      <div class="footer-logotip">
+        <img src="{% static "..\static\img\footer-img\Логотип (1).png" %}" alt="" />
+      </div>
+      <div class="footer-contacts">
+        <div class="footer-networks">
+          <img src="{% static "..\static\img\footer-img\instagram 1.png" %}" alt="insta" />
+          <img
+            src="{% static "..\static\img\footer-img\vk-social-logotype 1.png" %}"
+            alt="vk"
+          />
+          <img src="{% static "..\static\img\footer-img\whatsapp 2.png" %}" alt="whatsapp" />
+        </div>
+        <div class="footer-connection">
+          <div class="footer-phone">
+            <img
+              src="{% static "..\static\img\footer-img\phone-call 1 (1).png" %}"
+              alt="phone"
+            />
+            <p>+7 951 999 28 34</p>
+          </div>
+          <div class="footer-email">
+            <img src="{% static "..\static\img\footer-img\email 1 (1).png" %}" alt="gmai;" />
+            <p>info@stageboxbrand.ru</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-info">
+        <a href="#">Доставка</a>
+        <a href="#">Гарантии</a>
+        <a href="#">Таблица размеров</a>
+        <a href="#">Обмен и возврат</a>
+        <a href="#">Вопросы и ответы</a>
+      </div>
+      <div class="footer-instruments">
+        <div class="footer-inst">
+          <div class="korzina">
+            <img
+              src="{% static "..\static\img\nav-img\Group (2).svg" %}"
+              class="korzina-real"
+              alt=""
+            />
+          </div>
+          <div class="profil">
+            <img src="{% static "..\static\img\nav-img\Личный кабинет (1).svg" %}" alt="" />
+          </div>
+        </div>
+        <form class='search' method="GET">
+            <input class="search-input" type="search" name="search" value="{{request.GET.search}}" placeholder="Поиск" aria-label="Search">
+            <button class="search-button" type="submit"><img src="{% static "..\static\img\nav-img\magnifying-glass 1.svg" %}" alt=""></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

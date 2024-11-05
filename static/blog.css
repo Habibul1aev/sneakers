@@ -1,0 +1,363 @@
+.blog{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+}
+
+.h1blog{
+  font-size: 46px;
+  font-weight: 900;
+  text-align: left;
+  color: #002c6a;
+  margin: 28px 0 0 0;
+}
+
+
+
+
+.blog-content {
+  width: 100%;
+  height: auto;
+  margin: 100px 0 0 0;
+  transition: all 2s ease;
+
+  .blog-270 {
+    width: 540px;
+    height: 170px;
+    /* background: red; */
+    margin: 0 0 30px 0;
+    border-radius: 21px;
+    box-shadow: 15px 15px 15px rgba(103, 172, 255, 0.3);
+    transition: 700ms;
+  }
+
+  .blog-270:hover {
+    transform: scale(1.2, 1.2);
+  }
+
+  .blog-720 {
+    width: 540px;
+    height: 170px;
+    /* background: red; */
+    margin: 0 0 30px 0;
+    border-radius: 21px;
+    overflow: hidden;
+    box-shadow: 15px 15px 15px rgba(103, 172, 255, 0.3);
+    transition: 700ms;
+
+
+    .blog-flex {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      img {
+        width: 375px;
+      }
+    }
+  }
+  .blog-720:hover {
+    transform: scale(1.2, 1.2);
+  }
+}
+
+.blog-flex {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  .blog-rite {
+    h1 {
+      font-size: 24px;
+      font-weight: 900;
+      color: #002c6a;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    p {
+      color: #b3c0d2;
+      font-size: 8px;
+      font-weight: 400;
+      margin: 20px 0 0 0;
+    }
+  }
+}
+
+.post-email{
+
+  .post-back{
+    width: 540px;
+    height: 325px;
+    background: #29292D;
+    border-radius: 20px 20px 0 0;
+
+    h1{
+      font-size: 36px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      padding: 32px 0 0 0;
+    }
+
+    .post-back2{
+      width: 540px;
+      height: 239px;
+      border-radius: 20px;
+      border: 1px solid black;
+      background: white;
+      margin: 22px 0 0 0;
+      text-align: center;
+
+      input{
+        width: 482.01px;
+        height: 70px;
+        border: none;
+        border-bottom: 2px solid black;
+        outline: none;
+        font-size: 36px;
+        font-weight: 400;
+        color: #B3C0D2;
+        margin: 35px 0 20px 0;
+      }
+
+      button{
+        width: 191px;
+        height: 56px;
+        border-radius: 50px;
+        border: none;
+        background: #FF1818;
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        margin: 10px 0px 0px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 4px 1px 24px rgba(255, 32, 32, 0.651);
+        transition: 700ms;
+      }
+      button:hover{
+        transform: scale(1.1, 1.1);
+        cursor: pointer;
+      }
+      a{
+        color: gray;
+        display: flex;
+        align-items: start;
+        margin: 10px 0px 0 55px;
+        font-size: 12px;
+
+      }
+    }
+
+  }
+}
+
+
+
+.h1brends{
+  font-size: 46px;
+  font-weight: 900;
+  text-align: left;
+  color: #002c6a;
+  margin: 28px 0 28px 0;
+}
+.brends{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  img{
+    transition: 700ms;
+
+  }
+
+  img:hover{
+    transform: scale(1.2, 1.2);
+  }
+}
+
+
+@media(max-width:360px){
+  .brends{
+    display: block;
+    img{
+      transition: 700ms;
+      width: 77px;
+      height: 44px;
+      margin: 9px 13px;
+    }
+  
+    img:hover{
+      transform: scale(1.2, 1.2);
+    }
+  }
+
+  .blog{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    margin: 0px 0 60px 0;
+  }
+  
+  .h1blog{
+    font-size: 46px;
+    font-weight: 900;
+    text-align: left;
+    color: #002c6a;
+    margin: 90px 12px -89px 2px;
+  }
+
+  .post-email{
+
+    .post-back{
+      width: 320px;
+      height: 325px;
+      background: #29292D;
+      border-radius: 20px 20px 0 0;
+  
+      h1{
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        padding: 32px 0 0 0;
+      }
+  
+      .post-back2{
+        width: 320px;
+        height: 239px;
+        border-radius: 20px;
+        border: 1px solid black;
+        background: white;
+        margin: 22px 0 0 0;
+        text-align: center;
+  
+        input{
+          width: 250px;
+          height: 70px;
+          border: none;
+          border-bottom: 2px solid black;
+          outline: none;
+          font-size: 24px;
+          font-weight: 400;
+          color: #B3C0D2;
+          margin: 35px 0 20px 0;
+        }
+  
+        button{
+          width: 191px;
+          height: 56px;
+          border-radius: 50px;
+          border: none;
+          background: #FF1818;
+          font-size: 24px;
+          font-weight: bold;
+          color: white;
+          margin: 10px 0px 0px 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 4px 1px 24px rgba(255, 32, 32, 0.651);
+          transition: 700ms;
+        }
+        button:hover{
+          transform: scale(1.1, 1.1);
+          cursor: pointer;
+        }
+        a{
+          color: gray;
+          display: flex;
+          align-items: start;
+          margin: 10px 0px 0 55px;
+          font-size: 12px;
+  
+        }
+      }
+  
+    }
+  }
+
+
+  .blog-content {
+    width: 100%;
+    height: auto;
+    margin: 100px 0 0 0;
+    transition: all 2s ease;
+  
+    .blog-270 {
+      width: 275px;
+      height: 106px;
+      /* background: red; */
+      margin: 0px 0px 30px 20px;
+      border-radius: 21px;
+      box-shadow: 15px 15px 15px rgba(103, 172, 255, 0.3);
+      transition: 700ms;
+    }
+  
+    .blog-270:hover {
+      transform: scale(1.2, 1.2);
+    }
+  
+    .blog-720 {
+      width: 275px;
+      height: 106px;
+      /* background: red; */
+      margin: 0px 0px 30px 20px;
+      border-radius: 21px;
+      overflow: hidden;
+      box-shadow: 15px 15px 15px rgba(103, 172, 255, 0.3);
+      transition: 700ms;
+  
+  
+      .blog-flex {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        img {
+          width: 120px;
+        }
+      }
+    }
+    .blog-720:hover {
+      transform: scale(1.2, 1.2);
+    }
+  }
+  
+  .blog-flex {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    img{
+      width: 120px;
+
+    }
+  
+    .blog-rite {
+      h1 {
+        font-size: 12px;
+        font-weight: 900;
+        color: #002c6a;
+      }
+  
+      h3 {
+        font-size: 9px;
+        font-weight: 400;
+      }
+  
+      p {
+        color: #b3c0d2;
+        font-size: 8px;
+        font-weight: 400;
+        margin: 20px 0 0 0;
+      }
+    }
+  }
+  
+}

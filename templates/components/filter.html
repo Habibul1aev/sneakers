@@ -1,0 +1,68 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'filter.css' %}" />
+
+
+<div id='filteration' class="filteration">
+    <form method="GET">
+      <h1>Размер</h1>
+      <div class="filter-size">
+        {% for size in sneakers_size %}
+        <input name="size" type="checkbox" value="{{size.id}}" />{{size.size}}
+        EUR {% endfor %}
+      </div>
+      <h1>Сезон</h1>
+      <div class="filter-seazon">
+        {% for sezon in sneaker_seazon %}
+        <input name="sezon" type="checkbox" value="{{sezon.id}}" />
+        {{sezon.sezon}} {% endfor %}
+      </div>
+
+      <h1>Цена</h1>
+      <input class="range" type="range" />
+
+      <h1>Цвет</h1>
+      <div class="filter-color">
+        {% for color in color_list %}
+        <input
+          name="color"
+          type="checkbox"
+          value="{{color.id}}"
+        />{{color.color}} {% endfor %}
+      </div>
+
+      <h1>Категория</h1>
+      <div class="filter-category">
+        {% for categor in category_sneakers_list %}
+        <input
+          name="categorySne"
+          type="checkbox"
+          value="{{categor.id}}"
+        />{{categor.name}} {% endfor %}
+      </div>
+
+      <h1>Бренд</h1>
+      <div class="filter-brend">
+        {% for brend in brends_list %}
+        <input
+          name="brend"
+          type="checkbox"
+          value="{{brend.id}}"
+        />{{brend.name}} {% endfor %}
+      </div>
+
+      <button class="filter-button" type="submit">Поиск</button>
+    </form>
+  </div>
+
+  {% block scripts %}
+  <script>
+      document.getElementById('fil-button').addEventListener('click', function() {
+          const list = document.getElementById('filteration');
+          const filter = document.getElementById('filter');
+  
+          list.style.display = 'block';
+          filter.style.display = 'none'
+          
+        });
+  </script>
+  {% endblock  %}

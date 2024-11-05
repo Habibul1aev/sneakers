@@ -1,0 +1,116 @@
+{% extends "workspace/base.html" %}
+
+{% block create %}
+<h1 class='flex align-center justify-center font-bold'>Create Sneakers</h1>
+<div class="container flex align-center justify-center">
+
+  <div class='ml-200'>
+    <form action="{% url 'creat' %}" method="POST" enctype="multipart/form-data" novalidate>
+      {% csrf_token %}
+
+
+      <div>
+        <label for="id_name">{{form.name.label}}</label>
+        {{form.name}}
+        <div class="text-danger">
+          {% for error in form.name.errors %}
+              <div class='text-red-500'>{{ error }}</div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div>
+        <label for="id_photo">{{form.photo.label}}</label>
+        {{form.photo}}
+        <div class="text-danger">
+          {% for error in form.photo.errors %}
+              <div class='text-red-500'>{{ error }}</div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div>
+        <label for="id_code">{{form.code.label}}</label>
+        {{form.code}}
+        <div class="text-danger">
+          {% for error in form.code.errors %}
+              <div class='text-red-500'>{{ error }}</div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div>
+        <label for="id_price">{{form.price.label}}</label>
+        {{form.price}}
+        <div class="text-danger">
+          {% for error in form.price.errors %}
+              <div class='text-red-500'>{{ error }}</div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div>
+        <label for="id_size">{{form.size.label}}</label>
+        {{form.size}}
+        <div class="text-danger">
+          {% for error in form.size.errors %}
+              <div class='text-red-500'>{{ error }}</div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div>
+        <label for="id_category">{{form.category.label}}</label>
+        {{form.category}}
+        <div class="text-danger">
+          {% for error in form.category.errors %}
+              <div class='text-red-500'>{{ error }}</div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div>
+        <label for="id_sezon">{{form.seazon.label}}</label>
+        {{form.seazon}}
+        <div class="text-danger">
+          {% for error in form.seazon.errors %}
+              <div class='text-red-500'>{{ error }}</div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div>
+        <label for="id_color">{{form.color.label}}</label>
+        {{form.color}}
+        <div class="text-danger">
+          {% for error in form.color.errors %}
+              <div class='text-red-500'>{{ error }}</div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div>
+        <label for="id_category_sneakers">{{form.category_sneakers.label}}</label>
+        {{form.category_sneakers}}
+        <div class="text-danger">
+          {% for error in form.category_sneakers.errors %}
+              <div class='text-red-500'>{{ error }}</div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div>
+        <label for="id_brends">{{form.brends.label}}</label>
+        {{form.brends}}
+        <div class="text-danger">
+          {% for error in form.brends.errors %}
+              <div class='text-red-500'>{{ error }}</div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <button type="submit" class="w-72 h-12 bg-green-500 mt-5 border-none cursor-pointer text-white text-2xl">Create</button>
+    </form>
+  </div>
+</div>
+{% endblock create %}

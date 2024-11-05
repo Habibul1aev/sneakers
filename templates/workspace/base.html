@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Workspace</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    {% block extra %}{% endblock extra %}
+    <style>
+        
+    </style>
+</head>
+<body>
+    {% include "components/nav.html" %}
+    {% include "components/messages.html" %}
+    {% block content %}{% endblock %}
+    {% block create %}{% endblock create %}
+    {% include "components/footer.html" %}
+    
+</body>
+</html>
