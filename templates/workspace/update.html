@@ -12,19 +12,19 @@
     />
   </head>
   <body>
-    <h1 class="flex align-center justify-center font-bold mt-7">
-      Update Sneakers
-    </h1>
-    <div class="container flex align-center justify-center">
+    <div class="flex items-center justify-center bg-gray-100">
       <form
         action="{% url 'update' id=sneakers.id %}"
         method="POST"
         enctype="multipart/form-data"
+        class='w-full max-w-2xl bg-white p-8 rounded-lg shadow-lg'
         novalidate
       >
         {% csrf_token %}
+      <h2 class="text-2xl font-bold text-center text-gray-700 mb-6">Изменить</h2>
 
-        <div class='flex align-center justify-center gap-5'>
+
+        <div>
           <label for="id_name">{{form.name.label}}</label>
           {{form.name}}
           <div class="text-danger">
@@ -44,7 +44,7 @@
           </div>
         </div>
 
-        <div class='flex align-center justify-center gap-5'>
+        <div>
           <label for="id_code">{{form.code.label}}</label>
           {{form.code}}
           <div class="text-danger">
@@ -54,7 +54,7 @@
           </div>
         </div>
 
-        <div  class='flex align-center justify-center gap-5'>
+        <div >
           <label for="id_price">{{form.price.label}}</label>
           {{form.price}}
           <div class="text-danger">
@@ -64,7 +64,7 @@
           </div>
         </div>
 
-        <div  class='flex gap-5 ml-40'>
+        <div>
           <label for="id_size">{{form.size.label}}</label>
           {{form.size}}
           <div class="text-danger">
@@ -74,7 +74,7 @@
           </div>
         </div>
 
-        <div class='flex gap-5 ml-40'>
+        <div>
           <label for="id_category">{{form.category.label}}</label>
           {{form.category}}
           <div class="text-danger">
@@ -84,7 +84,7 @@
           </div>
         </div>
 
-        <div class='flex gap-5 ml-40'>
+        <div>
           <label for="id_sezon">{{form.seazon.label}}</label>
           {{form.seazon}}
           <div class="text-danger">
@@ -94,7 +94,7 @@
           </div>
         </div>
 
-        <div class='flex gap-5 ml-40'>
+        <div>
           <label for="id_color">{{form.color.label}}</label>
           {{form.color}}
           <div class="text-danger">
@@ -104,7 +104,7 @@
           </div>
         </div>
 
-        <div class='flex gap-5 ml-40'>
+        <div>
           <label for="id_category_sneakers"
             >{{form.category_sneakers.label}}</label
           >
@@ -116,7 +116,7 @@
           </div>
         </div>
 
-        <div class='flex gap-5 ml-40'>
+        <div>
           <label for="id_brends">{{form.brends.label}}</label>
           {{form.brends}}
           <div class="text-danger">
@@ -127,7 +127,7 @@
         </div>
 
         <div>
-          <button type="submit" class="w-72 h-12 bg-green-500 mt-5 border-none cursor-pointer text-white text-2xl ml-60">Update</button>
+          <button type="submit" class="w-full py-3 bg-black text-white font-semibold rounded-lg hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">Изменить</button>
         </div>
       </form>
     </div>

@@ -10,6 +10,7 @@ urlpatterns = [
     path('sneakers/<int:id>/', views.categor_elements, name='categor_elements'),
     path('detal/<int:id>/', views.detail_news, name='detail_news'),
     path('sneakers/', views.main, name='main'),
+    path('profile/', views.profile, name='profile'),
     path('workspace/', include('workspace.urls')),
 ]
 

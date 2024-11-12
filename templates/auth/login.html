@@ -1,0 +1,45 @@
+{% extends "workspace/base.html" %}
+{% block title %}LOGIN{% endblock  %}
+
+{% block login %}
+<div class="container">
+    <div style='
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 0 0;'>
+        <form action="{% url "login_profile" %}" method='POST' class="w-full max-w-md bg-white p-8 rounded-lg shadow-lg" novalidate>
+            <h2 class="text-2xl font-semibold text-center text-gray-800 mb-6">Вход в аккаунт</h2>
+            {% csrf_token %}
+            <div class="mb-4">
+                <label for="id_name" class="block text-sm font-medium text-gray-700">Имя пользователя</label>
+                {{ form.user }}
+                {% if form.name.errors %}
+                    <div class="text-red-500 text-sm mt-1">
+                        {% for error in form.name.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="mb-6">
+                <label for="id_password" class="block text-sm font-medium text-gray-700">Пароль</label>
+                {{ form.password }}
+                {% if form.password.errors %}
+                    <div class="text-red-500 text-sm mt-1">
+                        {% for error in form.password.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <button type="submit" class="w-full py-2 bg-black text-white rounded-lg hover:bg-[#A0A0A0] focus:outline-none focus:ring-2 focus:ring-[#A0A0A0] focus:ring-offset-2">
+                Войти
+            </button>
+            <div class="mt-4 text-center text-sm text-gray-600">
+                Нет аккаунта? <a href="{% url "regist_profile" %}" class="text-blue-500 hover:underline">Зарегистрироваться</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock  %}

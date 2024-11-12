@@ -64,3 +64,8 @@ def detail_news(req, id):
     img = sneakers.images.all()
 
     return render(req, 'detail_news.html',{'sneakers':sneakers, 'sneakerss':sneakerss, 'img':img} )
+
+
+def profile(request):
+
+    return render(request, 'profile.html')

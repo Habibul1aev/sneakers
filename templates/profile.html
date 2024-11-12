@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+
+{% block avtorization %}
+{% if request.user.is_authenticated %}
+<div class="container">
+    <div style='display:flex;gap:30px;align-items: center;justify-content: center;margin: 100px;'>
+        <div class="logout">
+           <a href="{% url "logout_profile" %}"> <button style='
+            border: none;
+            width: 100px;
+            height: 50px;
+            border-radius: 5px;
+            background: black;
+            color: white;'>LOGOUT</button></a>
+        </div>
+    </div>
+</div>
+
+
+{% else %}
+<div class="container">
+    <div style='display:flex;gap:30px;align-items: center;justify-content: center;margin: 100px;'>
+        <div class="sign">
+           <a href="{% url "login_profile" %}"> <button style='
+            border: none;
+            width: 100px;
+            height: 50px;
+            border-radius: 5px;
+            background: blue;
+            color: white;'>LOGIN</button></a>
+        </div>
+
+        <div class="authorization">
+            <a href="{% url "regist_profile" %}">
+                <button style='
+                border: none;
+                width: 150px;
+                height: 50px;
+                border-radius: 5px;
+                background: red;
+                color: white;'>REGISTRATION</button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock  %}
+
